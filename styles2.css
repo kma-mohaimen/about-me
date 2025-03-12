@@ -388,11 +388,14 @@ select:disabled {
 }
 
 button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
+button[type="button"],
+button[type="reset"],
+button[type="submit"] {
+  appearance: button;
+  -webkit-appearance: button; /* For older WebKit browsers */
+  -moz-appearance: button; /* For older Firefox versions */
 }
+
 button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
@@ -447,10 +450,13 @@ legend + * {
   height: auto;
 }
 
-[type=search] {
+input[type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
+  appearance: textfield;
+  -webkit-appearance: textfield; /* For older WebKit browsers */
+  -moz-appearance: textfield; /* For older Firefox versions */
 }
+
 
 /* rtl:raw:
 [type="tel"],
@@ -470,7 +476,10 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
+  appearance: button;
+  -webkit-appearance: button; /* For older WebKit browsers */
+  -moz-appearance: button; /* For older Firefox versions */
+  cursor: pointer; /* Improves usability */
 }
 
 output {
@@ -10853,7 +10862,7 @@ html {
   height: 250px; /* Adjust height as needed */
   object-fit: cover;
 }
-</style> 
+
 .page-section {
   padding: 6rem 0;
 }
